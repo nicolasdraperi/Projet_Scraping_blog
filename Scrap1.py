@@ -41,7 +41,7 @@ def scrape_article_detail(article_url):
 # Appel
 Natricle = 1
 stockage = {}
-for pages in range(0, 30):
+for pages in range(0, 1):
     compil_url = "https://www.blogdumoderateur.com/web/page/" + str(pages) + "/"
     print("url ciblé :", compil_url)
     articles = fetch_articles(compil_url)
@@ -82,7 +82,7 @@ for pages in range(0, 30):
 
             auteur = details.select_one("div.meta-info")
             date = details.select_one("time")
-            blocks = details.select("article p, article h2, article h3")
+            blocks = details.select("article p, article h2, article h3, article li")
             contenu_clean = ""
             images = []
             figures = details.select("article figure")
