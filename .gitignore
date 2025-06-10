@@ -1,2 +1,10 @@
 .article.json
 .venv
+/.idea/.gitignore
+/articles.json
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/Projet_Scraping_blog2.iml
+/.idea/vcs.xml
