@@ -80,8 +80,8 @@ for pages in range(0, 1):
             # debut gestion des article interne
             details = scrape_article_detail(url_article)
 
-            auteur = details.select_one("div.meta-info")
-            date = details.select_one("time")
+            auteur = details.select_one("span.byline a")
+            date = details.select_one("time.entry-date")
             blocks = details.select("article p, article h2, article h3, article li")
             contenu_clean = ""
             images = []
@@ -107,10 +107,13 @@ for pages in range(0, 1):
 
             # auteur + date
             if auteur:
-                print("Auteur :", auteur.select_one("span.byline a").text.strip())
-                stockage[Natricle]["Auteur"] = auteur.text.strip()
+                nom_auteur = auteur.text.strip()
+                stockage[Natricle]["Auteur"] = nom_auteur
+                print("Auteur :", nom_auteur)
             if date:
-                print("Publié le :", date.text.strip())
+                date_publi = date.text.strip()
+                stockage[Natricle]["Date de publication"] = date_publi
+                print("Publié le :", date_publi)
             # contenu artcile
             for block in blocks:
                 text = block.get_text(strip=True)
