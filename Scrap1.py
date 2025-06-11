@@ -115,7 +115,7 @@ for pages in range(0, 1):
             for block in blocks:
                 text = block.get_text(strip=True)
                 if text:
-                    contenu_clean += text + "\n\n"
+                    contenu_clean += text + "\n"
 
             if contenu_clean:
                 print("Contenu nettoyé :")
